@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+              http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee">
+         
+  <listener>
+  	<listener-class>com.cschool.shop.managment.server.listener.ApplicationStartupListener</listener-class>
+  </listener>
+
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>LoginServletService</servlet-name>
+    <servlet-class>com.cschool.shop.managment.server.servlet.service.LoginServletService</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>ProductServletRPCService</servlet-name>
+  	<servlet-class>com.cschool.shop.managment.server.servlet.service.ProductServletRPCService</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>CategoryServletRPCService</servlet-name>
+  	<servlet-class>com.cschool.shop.managment.server.servlet.service.CategoryServletRPCService</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>LoginServletService</servlet-name>
+    <url-pattern>/shopmanagment/login</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>ProductServletRPCService</servlet-name>
+  	<url-pattern>/shopmanagment/product</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>CategoryServletRPCService</servlet-name>
+  	<url-pattern>/shopmanagment/category</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>ShopManagment.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>
